@@ -1,9 +1,10 @@
-"\nChange from my development environment!\n"
+I can use VS Code as a workspace to continue working on and
+modifying whatever programs I'm working on, and having it be
+connected to github allows others to see what I've done and be
+able to collaborate.
 
-"What now?"
+It's important to make sure that everything stays updated on
+both ends of the pipeline.
 
-// look at all these changes! golly shucks gee!
-
-// I want those conscripts!
-
-// is it atomic? yes sir, very atomic!
+It's also very important to be putting notes on everything you
+do, both for the sake of others as well as yourself.
