@@ -8,4 +8,4 @@ the same place, streamlined for crunching number after number.
 Not only that, but having it online would open many more possibilites for social play,
 progression tracking, and customization options.
 
-![Startup info](c:/Users/xanin/Downloads/startup.png)
+![alt text](c:/Users/xanin/Downloads/startup.png "Startup info")
