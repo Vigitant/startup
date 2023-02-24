@@ -1,37 +1,50 @@
 body {
-    font-family: tahoma;
-    text-align: center;
-    color: #272829;
+  font-family: tahoma;
+  text-align: center;
+  color: #272829;
+}
+h1 {
+  font-size: 2.5em;
+}
+.wrapper {
+  /* The codepen I took this from said
+  I needed this for alignment ¯\_(ツ)_/¯ */
+  height: 15vh;
+  display: grid;
+  place-items: center;
+}
+.generated-number {
+  width: 5ch;
+  animation: typing 1s steps(5);
+  /*animation-delay: 2s;*/
+  /*implement after making invisible
+    to begin*/
+  overflow: hidden;
+  font-family: tahoma;
+  font-size: 4em;
+  white-space: nowrap;
+}
+@keyframes typing {
+  from {
+    width: 0
   }
-  h1 {
-    font-size: 2.5em;
-  }
-  .wrapper {
-    /* The codepen I took this from said
-    I needed this for alignment ¯\_(ツ)_/¯ */
-    height: 15vh;
-    display: grid;
-    place-items: center;
-  }
-  .generated-number {
-    width: 5ch;
-    animation: typing 1s steps(5);
-    /*animation-delay: 2s;*/
-    /*implement after making invisible
-      to begin*/
-    overflow: hidden;
-    font-family: tahoma;
-    font-size: 4em;
-    white-space: nowrap;
-  }
-  @keyframes typing {
-    from {
-      width: 0
-    }
-  }
-  input {
-    font-size: 2.5em;
-  }
-  button {
-    font-size: 1.5em;
-  }
+}
+input {
+  font-size: 2.5em;
+  text-align: center;
+}
+button {
+  font-size: 1.5em;
+  width: 75px;
+  height: 50px;
+}
+.credits {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.source_code {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
