@@ -46,3 +46,19 @@ I'm still new to the world of computer programming, so I'm still
 somewhat perplexed at how files of different language types interact
 with each other. Thankfully, learning all of this interesting stuff
 is one of the things I really enjoy about computer science.
+
+Startup HTML and CSS notes:
+
+Man, people weren't kidding when they said that alignment in CSS is a
+patience tester. I was able to get things oriented in a way that looks
+good to me now, but I spent a lot of time and I'm still not done. I
+suppose it stems from there being so many options for alignment built
+into CSS, which ultimately is a good thing, but compared to the relative
+simplicity of other basic functions, it's definitely a hurdle.
+
+One of the nice things about working on something that I'm interested in
+and came up with on my own is that I can decide what features to roll
+out and at what pace. It took a lot of work to get my page having the
+basics, but I can now tinker with it to implement other pages and
+elements without, hopefully, having to redo what I've already got solid.
+
