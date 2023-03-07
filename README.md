@@ -62,3 +62,17 @@ out and at what pace. It took a lot of work to get my page having the
 basics, but I can now tinker with it to implement other pages and
 elements without, hopefully, having to redo what I've already got solid.
 
+Simon Javascript notes:
+
+All programs are different, needing some kinds of code but not others.
+There are many things I still really don't understand about Javascript.
+Thankfully, I think my startup is relatively simple. Of course, I will
+need to know a lot more than what my startup project needs if I am to
+make more programs - I can't just cross my fingers and hope that nothing
+I don't understand ever comes up. But I'm glad I can build my program
+at my own pace, and that having it be personally picked gives me the
+motivation to figure out all the different components.
+
+Javascript is the most "code-y" of the three languages that we have
+learned about thus far - it has a lot of different options for a lot
+of powerful features.
