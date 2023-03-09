@@ -76,3 +76,22 @@ motivation to figure out all the different components.
 Javascript is the most "code-y" of the three languages that we have
 learned about thus far - it has a lot of different options for a lot
 of powerful features.
+
+
+Mid-term notes:
+
+Learning philosophy:
+1. Technology
+2. Art
+3. Social
+4. Discovery
+
+HTML = Hypertext Markup Language - invented by Tim Berners-Lee
+HTTP = HyperText Transfer Protocol
+URL = Uniform Resource Locator
+CSS = Cascading Style Sheets
+
+“Always bet on JS” — Brendan Eich
+
+![image](https://user-images.githubusercontent.com/46859278/224084795-bdeeec67-d966-43f6-bce8-055e7c2d0da6.png)
+
