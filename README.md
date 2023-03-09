@@ -95,3 +95,22 @@ CSS = Cascading Style Sheets
 
 ![image](https://user-images.githubusercontent.com/46859278/224084795-bdeeec67-d966-43f6-bce8-055e7c2d0da6.png)
 
+Console commands:
+pwd: present working directory (shows the file path you're in)
+curl: Command line client URL browser
+grep - Regular expression search
+find - Find files
+cat - Output the contents of a file
+ps - View the currently running processes
+kill - Kill a currently running process
+sudo - Execute a command as a super user (admin)
+ssh - Create a secure shell on a remote computer
+scp - Securely copy files to a remote computer
+ping - Check if a website is up
+tracert - Trace the connections to a website
+dig - Show the DNS information for a domain
+
+| - Take the output from the command on the left and pipe, or pass, it to the command on the right
+> - Redirect output to a file. Overwrites the file if it exists
+>> - Redirect output to a file. Appends if the file exist
+
