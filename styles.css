@@ -13,7 +13,7 @@ h1 {
   display: grid;
   place-items: center;
 }
-.generated-number {
+h2 {
   width: 5ch;
   animation: typing 1s steps(5);
   /*animation-delay: 2s;*/
