@@ -3,13 +3,7 @@ body {
   text-align: center;
   color: #272829;
 }
-h1 {
-  /*use a Da Vinci style font*/
-  font-size: 2.5em;
-}
 .wrapper {
-  /* The codepen I took this from said
-  I needed this for alignment ¯\_(ツ)_/¯ */
   height: 15vh;
   display: grid;
   place-items: center;
