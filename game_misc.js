@@ -1,7 +1,6 @@
-let numDisplay = document.createElement('p');
+let numDisplay = document.createElement('h2');
 
 function random_number() {
-    console.log("function called");
     let numRand = Math.floor(Math.random() * 100000);
     
     const output = document.getElementById("generated-number");
@@ -9,7 +8,6 @@ function random_number() {
     
     numDisplay.innerHTML = numRand;
     output.appendChild(numDisplay);
-    console.log(numRand);
   }
   
   function removeAllChildNodes(parent) {

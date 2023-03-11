@@ -1,4 +1,4 @@
-const insertCharacter = function (character) {
+const insertCharacter = function (character) {              //to fix: text area gets deselected after using button as input
     let textarea = document.getElementById("textArea");
     let start_position = textarea.selectionStart;
     let end_position = textarea.selectionEnd;
