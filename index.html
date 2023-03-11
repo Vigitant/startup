@@ -6,8 +6,23 @@
     </head>
     <body onload = "random_number()">
         <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="hamburger_menu.css" />
         <header>
             <h1>Quintus</h1>
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <a href="#"><li>Play Quintus</li></a>
+                        <a href="#"><li>Log In</li></a>
+                        <a href="#"><li>How To Play</li></a>
+                        <a href="#"><li>About</li></a>
+                    </ul>
+                </div>
+              </nav>
         </header>
         <main>
             <div class="wrapper">
@@ -27,7 +42,7 @@
                         <td><button onClick="insertCharacter('-')">-</button></td>
                         <td><button onClick="insertCharacter('×')">×</button></td>
                         <td><button onClick="insertCharacter('/')">/</button></td>
-                        <td><button>⌫</button></td>
+                        <td><button>⌫</button></td>                                 <!-- implement this button-->
                     </tr>
                     <tr>
                         <td><button onClick="insertCharacter('^')">^</button></td>

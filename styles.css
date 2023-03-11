@@ -4,6 +4,7 @@ body {
   color: #272829;
 }
 h1 {
+  /*use a Da Vinci style font*/
   font-size: 2.5em;
 }
 .wrapper {
@@ -18,7 +19,8 @@ h2 {
   /*width: 5ch;
   animation: typing 1s steps(5);
   overflow: hidden;*/
-  font-family: tahoma;
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
   font-size: 2em;
   white-space: nowrap;
 }
@@ -30,6 +32,8 @@ h2 {
 input {
   font-size: 2.5em;
   text-align: center;
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
 }
 button {
   font-size: 1.5em;
