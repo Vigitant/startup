@@ -50,4 +50,5 @@ button {
 #new_number {
   color: #6f828a;
   text-decoration: underline;
+  cursor: pointer;
 }
