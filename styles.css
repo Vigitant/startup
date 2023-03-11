@@ -46,3 +46,8 @@ button {
   bottom: 5px;
   right: 5px;
 }
+
+#new_number {
+  color: #6f828a;
+  text-decoration: underline;
+}
