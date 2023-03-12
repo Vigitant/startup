@@ -14,10 +14,14 @@ function random_number() {
     
     numDisplay.innerHTML = paddedNumber;
     output.appendChild(numDisplay);
-  }
+}
   
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
     }
   }
+
+function resetText() {
+    document.getElementById("textArea").value = "";
+}
