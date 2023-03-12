@@ -15,11 +15,9 @@ function random_number() {
 function checkEqualSign () {
   let userInput = document.getElementById('textArea').value;
   if (!userInput.includes('=')) {
-    //Oops! Your answer must include at least one =
     const output = document.getElementById("entryResponse");
     removeAllChildNodes(output);
-    
-    messageDisplay.innerHTML = "Oops! Your answer must include at least one =";
+    messageDisplay.innerHTML = "Your answer must include at least one =";
     output.appendChild(messageDisplay);
   }
 }
@@ -28,6 +26,12 @@ function resetText() {
   document.getElementById("textArea").value = "";
 }
 
+function resetMessage() {
+  const output = document.getElementById("entryResponse");
+    removeAllChildNodes(output);
+    messageDisplay.innerHTML = "";
+    output.appendChild(messageDisplay);
+}
 
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {

@@ -3,7 +3,8 @@
     <head>
         <script src="button_mapping.js"></script>
         <script src="game_misc.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+         integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body onload = "random_number()">
         <link rel="stylesheet" href="styles.css" />
@@ -32,7 +33,7 @@
             <div id="new_number" onClick="random_number();resetText()" >new number</div>
             <br />
             <div id="inputLine">
-                <input type="text" id="textArea" name="varText" placeholder="your solution"/>
+                <input type="text" id="textArea" name="varText" onClick="resetMessage()" placeholder="your solution"/>
                 <button id="enter_solution" title="Enter Solution" onClick="checkEqualSign()">⇨</button> <!--the button size needs to be fixed-->
             </div>
             <br/>
@@ -59,7 +60,7 @@
         </main>
         <footer>
             <span>
-                <a id="credits">Created by Caden Mustoe</a>
+                <div id="credits">Created by Caden Mustoe</div>
                 <a id="source_code"
                     href="https://github.com/Vigitant/startup" target="_blank">See code here</a>
             </span>
