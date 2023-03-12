@@ -1,5 +1,6 @@
 body {
-  font-family: tahoma;
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
   text-align: center;
   color: #272829;
 }
@@ -13,8 +14,6 @@ h2 {
   /*width: 5ch;
   animation: typing 1s steps(5);
   overflow: hidden;*/
-  font-family: "Computer Modern";
-  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
   font-size: 2em;
   white-space: nowrap;
 }
@@ -26,8 +25,6 @@ h2 {
 input {
   font-size: 2.5em;
   text-align: center;
-  font-family: "Computer Modern";
-  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
 }
 button {
   font-size: 1.5em;
@@ -44,9 +41,18 @@ button {
   bottom: 5px;
   right: 5px;
 }
-
 #new_number {
   color: #6f828a;
+  font-size: 1.5em;
   text-decoration: underline;
   cursor: pointer;
+  /*set width*/
+}
+#enter_solution {
+  font-size: 2em;
+  background-color: #0485d1;
+}
+#input_line {
+  margin-top: 125px;
+  display: inline-flex;
 }

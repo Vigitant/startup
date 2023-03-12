@@ -3,6 +3,7 @@
     <head>
         <script src="button_mapping.js"></script>
         <script src="game_misc.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body onload = "random_number()">
         <link rel="stylesheet" href="styles.css" />
@@ -28,12 +29,14 @@
             <div class="wrapper">
                 <h2 id="generated-number"></h2>
             </div>
-            <br />
             <div id="new_number" onClick="random_number();resetText()" >new number</div>
             <br />
-            <input type="text" id="textArea" name="varText" placeholder="your solution"/>
+            <div id="inputLine">
+                <input type="text" id="textArea" name="varText" placeholder="your solution"/>
+                <button id="enter_solution" title="Enter Solution" onClick="checkEqualSign()">⇨</button> <!--the button size needs to be fixed-->
+            </div>
             <br/>
-            <br/>
+            <div id="entryResponse"></div>
             <br/>
             <div class="wrapper">
                 <table>
