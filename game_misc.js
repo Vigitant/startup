@@ -12,13 +12,22 @@ function random_number() {
     output.appendChild(numDisplay);
 }
 
-function checkEqualSign () {
-  let userInput = document.getElementById('textArea').value;
+function checkEqualSign() {
+  
   if (!userInput.includes('=')) {
     const output = document.getElementById("entryResponse");
     removeAllChildNodes(output);
     messageDisplay.innerHTML = "Your answer must include at least one =";
     output.appendChild(messageDisplay);
+  }
+}
+
+function checkNumMatch() {
+  let userInput = document.getElementById('textArea').value;
+  for (let i = 0; i < userInput.length; ++i) {
+    if (!isNaN(userInput.charAt(i))) {
+      //if (userInput.charAt(i) != )                          //finish this. we're comparing numbers. should be fun
+    }
   }
 }
 
