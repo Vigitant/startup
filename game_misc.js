@@ -55,7 +55,7 @@ function checkMath() {
       correctMath = false;
     }
   }
-  console.log(correctMath);
+  
 }
 
 function resetText() {
