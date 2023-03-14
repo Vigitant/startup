@@ -11,12 +11,15 @@ function random_number() {
 
 function checkEqualSign() {
   let userInput = document.getElementById("textArea").value;
+  let hasEqual = true;
   if (!userInput.includes('=')) {
     const output = document.getElementById("entryResponse");
     removeAllChildNodes(output);
     messageDisplay.innerHTML = "Your answer must include at least one =";
     output.appendChild(messageDisplay);
+    hasEqual = false;
   }
+  return hasEqual;
 }
 
 function checkNumMatch() {                                                                /*This isn't working. For some reason.*/
@@ -46,6 +49,8 @@ function checkMath() {
     ·
     ÷
     ban the use of ≠, ≈, ~, ≡, <, >, ≤, ≥, ≪, ≫*/
+
+  if (!checkEqualSign()) { return }
 
   let userInput = document.getElementById("textArea").value;
   let mathExpressions = userInput.split("=");
