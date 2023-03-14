@@ -56,3 +56,9 @@ button {
   margin-top: 125px;
   display: inline-flex;
 }
+#about_page {
+  margin: auto;
+  font-size: 1.75em;
+  font-family: Arial;
+  max-width: 50%;
+}
