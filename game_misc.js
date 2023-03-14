@@ -55,7 +55,18 @@ function checkMath() {
       correctMath = false;
     }
   }
-  
+  if (correctMath) {
+    const output = document.getElementById("entryResponse");
+    removeAllChildNodes(output);
+    messageDisplay.innerHTML = "Good job!";
+    output.appendChild(messageDisplay);
+  }
+  else {
+    const output = document.getElementById("entryResponse");
+    removeAllChildNodes(output);
+    messageDisplay.innerHTML = "Try again";
+    output.appendChild(messageDisplay);
+  }
 }
 
 function resetText() {
