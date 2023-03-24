@@ -624,3 +624,16 @@ JavaScript Promise objects are great for asynchronous execution, but as develope
 
 The `async` keyword declares that a function returns a promise. The `await` keyword wraps a call to the `async` function, blocks execution until the promise has resolved, and then returns the result of the promise.
 
+
+Simon Service notes:
+I've been thinking a lot about how I'm going to implement these things to my startup
+and I think the most important use will be to keep track of which numbers have
+already been solved and not giving those numbers to the players.
+
+I'll need to go over this code a bit more in order to get everything integrated with
+my startup that I want. I'm still pretty unsure on how to parse and reference
+the information, but I'm sure I'll figure it out.
+
+I had some trouble with the structuring of the folders and files - the public folder
+needs to go in the main folder of the project, and only the things that are publicly
+visible go in there.
