@@ -1,8 +1,8 @@
 const {MongoClient} = require('mongodb');
 
-const userName = 'Vigitant';
-const password = 'Husky2013@1';
-const hostname = 'mongodb.com';
+const userName = process.env.MONGOUSER;
+const password = process.env.MONGOPASSWORD;
+const hostname = process.env.MONGOHOSTNAME;
 
 if (!userName) {
   throw Error('Database not configured. Set environment variables');
