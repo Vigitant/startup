@@ -645,3 +645,6 @@ DON'T COMMIT WITH PASSWORDS IN CODE. USE PROCESS.ENV INSTEAD.
 As long as Mongo (or whatever service) is set up once, any programs that use it from
 then are good to go.
 
+From what I understand, databases are useful for storing (potentially) large amounts
+of data, particularly user data. Because it often contains user data, it's important
+to make sure that everything is secure.
