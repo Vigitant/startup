@@ -8,7 +8,7 @@ the same place, streamlined for crunching number after number.
 Not only that, but having it online would open many more possibilites for social play,
 progression tracking, and customization options.
 
-![startup image](startup.png)
+![startup image](public/startup.png)
 
 Simon HTML notes:
 
@@ -637,9 +637,3 @@ the information, but I'm sure I'll figure it out.
 I had some trouble with the structuring of the folders and files - the public folder
 needs to go in the main folder of the project, and only the things that are publicly
 visible go in there.
-
-Simon DB notes:
-
-Remember to: get MongoDB (or whatever service) set up, install the nodes in the project
-I'm working on, and updating gitignore to ignore the associated files.
-
