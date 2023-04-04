@@ -637,3 +637,11 @@ the information, but I'm sure I'll figure it out.
 I had some trouble with the structuring of the folders and files - the public folder
 needs to go in the main folder of the project, and only the things that are publicly
 visible go in there.
+
+Simon DB notes:
+
+DON'T COMMIT WITH PASSWORDS IN CODE. USE PROCESS.ENV INSTEAD.
+
+As long as Mongo (or whatever service) is set up once, any programs that use it from
+then are good to go.
+
