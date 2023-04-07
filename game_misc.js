@@ -39,21 +39,23 @@ function checkNumMatch() {                                                      
   }*/
 }
 
+function replaceExpressions(input) {
+  input = input.replace(/×/g, '*');
+  input = input.replace(/·/g, '*');
+  input = input.replace(/x/g, '*');
+  input = input.replace(/÷/g, '/');
+  input = input.replace(/\^/g, '**');
+  //input = input.replace(/√/g, '');  next on my hit list
+  //if(index of ( - 1 == # or ), insert *
+  return input;
+}
+
 function checkMath() {
-
-/*  symbols that need recast:
-    ×
-    ^
-    √
-    #() = #*()
-    ·
-    ÷
-    ban the use of ≠, ≈, ~, ≡, <, >, ≤, ≥, ≪, ≫*/
-
   if (!checkEqualSign()) { return }
-
-  let userInput = document.getElementById("textArea").value;
+  let rawInput = document.getElementById("textArea").value;
+  let userInput = replaceExpressions(rawInput);
   let mathExpressions = userInput.split("=");
+
   let correctMath = true;
   for (let i = 0; i < mathExpressions.length - 1; ++i) {
     if(Function("return " + mathExpressions[i])() != Function("return " + mathExpressions[i+1])()) {
