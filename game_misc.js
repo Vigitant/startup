@@ -108,4 +108,5 @@ function resetMessage() {
     let end_position = textarea.selectionEnd;
 
     textarea.value = `${textarea.value.substring(0, start_position - 1)}${textarea.value.substring(end_position, textarea.value.length)}`;
+    document.getElementById("textArea").focus();
   }
