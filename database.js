@@ -11,6 +11,30 @@ if (!userName) {
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
+const userCollection = client.db('quintus').collection('user');
+//const scoreCollection = client.db('simon').collection('score');
+
+function getUser(x) {
+  return userCollection.findOne({ name: x });
+}
+
+function getUserByToken(t) {
+  return userCollection.findOne({ token: t });
+}
+
+async function createUser(email, password) {
+  // Hash the password before we insert it into the database
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const user = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await userCollection.insertOne(user);
+
+  return user;
+}
 
 let solvedNums = [];                      //each logged in user will need one
 
