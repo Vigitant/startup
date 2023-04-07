@@ -11,3 +11,16 @@ if (!userName) {
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
+
+let solvedNums = [];                      //each logged in user will need one
+
+function checkNum(randNum) {              //run this for logged in users before printing
+  while(solvedNums.includes(randNum)) {
+    randNum++;
+  }
+  return randNum;
+}
+
+function addNum(newNum) {                 //run whenever math checks out
+  solvedNums.push(newNum);
+}
