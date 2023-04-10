@@ -7,6 +7,7 @@ function random_number() {
     removeAllChildNodes(output);
     numDisplay.innerHTML = numRand;
     output.appendChild(numDisplay);
+    zipInfo(numRand);
 }
 
 function checkEqualSign() {
@@ -87,26 +88,38 @@ function resetMessage() {
     output.appendChild(messageDisplay);
 }
 
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
   }
+}
 
-  const insertCharacter = function (character) {
-    let textarea = document.getElementById("textArea");
-    let start_position = textarea.selectionStart;
-    let end_position = textarea.selectionEnd;
+const insertCharacter = function (character) {
+  let textarea = document.getElementById("textArea");
+  let start_position = textarea.selectionStart;
+  let end_position = textarea.selectionEnd;
   
-    textarea.value = `${textarea.value.substring(0, start_position)}${character}${textarea.value.substring(end_position, textarea.value.length)}`;
-    document.getElementById("textArea").focus();
-  };
+  textarea.value = `${textarea.value.substring(0, start_position)}${character}${textarea.value.substring(end_position, textarea.value.length)}`;
+  document.getElementById("textArea").focus();
+};
 
-  const backSpace = function() {
-    let textarea = document.getElementById("textArea");
-    let start_position = textarea.selectionStart;
-    let end_position = textarea.selectionEnd;
+const backSpace = function() {
+  let textarea = document.getElementById("textArea");
+  let start_position = textarea.selectionStart;
+  let end_position = textarea.selectionEnd;
 
-    textarea.value = `${textarea.value.substring(0, start_position - 1)}${textarea.value.substring(end_position, textarea.value.length)}`;
-    document.getElementById("textArea").focus();
-  }
+  textarea.value = `${textarea.value.substring(0, start_position - 1)}${textarea.value.substring(end_position, textarea.value.length)}`;
+  document.getElementById("textArea").focus();
+}
+
+//https://www.zippopotam.us/
+async function zipInfo(zipNum) {
+  const response = await fetch(`https://api.zippopotam.us/us/${zipNum}`);
+  const data = await response.json();
+  const places = data.places[0];
+
+  const cityState = document.getElementById("zipCode");
+  removeAllChildNodes(cityState);
+  cityMessage.innerHTML = places['place name'] + ', ' + places['state'];
+  cityState.appendChild(numDisplay);
+}
