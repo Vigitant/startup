@@ -11,13 +11,9 @@ async function random_number() {
 }
 
 document.getElementById("new_number").onclick=async()=>{
-  console.log("asdf");
   await random_number();
   resetText();
 };
-
-//let button = document.getElementById('new_number');
-//button.addEventListener('click', async () => await random_number(), true);
 
 function checkEqualSign() {
   let userInput = document.getElementById("textArea").value;
@@ -121,16 +117,22 @@ const backSpace = function() {
   document.getElementById("textArea").focus();
 }
 
-//https://www.zippopotam.us/
 async function zipInfo(zipNum) {
+  //https://www.zippopotam.us/
   const response = await fetch(`https://api.zippopotam.us/us/${zipNum}`);
-  const data = await response.json();
-  const places = data.places[0];
+  if (response.status != 404) {
+    const data = await response.json();
+    const places = data.places[0];
 
-  console.log(places['place name'] + ', ' + places['state']);
+    console.log(places['place name'] + ', ' + places['state']);
 
-  const cityState = document.getElementById("zipCode");
-  removeAllChildNodes(cityState);
-  cityState.innerHTML = places['place name'] + ', ' + places['state'];
-  //cityState.appendChild(cityMessage);
+    const cityState = document.getElementById("zipCode");
+    removeAllChildNodes(cityState);
+    cityState.innerHTML = places['place name'] + ', ' + places['state'];
+  }
+  else {
+    const cityState = document.getElementById("zipCode");
+    removeAllChildNodes(cityState);
+    cityState.innerHTML = "no zip code found";
+  }
 }
