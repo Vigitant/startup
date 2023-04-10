@@ -1,14 +1,23 @@
 let numDisplay = document.createElement('h2');
 let messageDisplay = document.createElement('div');
 
-function random_number() {
+async function random_number() {
     let numRand = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
     const output = document.getElementById("generated-number");
     removeAllChildNodes(output);
     numDisplay.innerHTML = numRand;
     output.appendChild(numDisplay);
-    zipInfo(numRand);
+    await zipInfo(numRand);
 }
+
+document.getElementById("new_number").onclick=async()=>{
+  console.log("asdf");
+  await random_number();
+  resetText();
+};
+
+//let button = document.getElementById('new_number');
+//button.addEventListener('click', async () => await random_number(), true);
 
 function checkEqualSign() {
   let userInput = document.getElementById("textArea").value;
@@ -118,8 +127,10 @@ async function zipInfo(zipNum) {
   const data = await response.json();
   const places = data.places[0];
 
+  console.log(places['place name'] + ', ' + places['state']);
+
   const cityState = document.getElementById("zipCode");
   removeAllChildNodes(cityState);
-  cityMessage.innerHTML = places['place name'] + ', ' + places['state'];
-  cityState.appendChild(numDisplay);
+  cityState.innerHTML = places['place name'] + ', ' + places['state'];
+  //cityState.appendChild(cityMessage);
 }

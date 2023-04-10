@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="..\game_misc.js"></script>
         <script src="..\zip_codes.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
         yyintegrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -31,7 +30,7 @@
             <div class="wrapper">
                 <h2 id="generated-number"></h2>
             </div>
-            <div id="new_number" onClick="random_number();resetText()" >new number</div>
+            <div id="new_number">new number</div>
             <br><div id="inputLine">
                 <input type="text" id="textArea" name="varText" onClick="resetMessage()" placeholder="your solution"/>
                 <button id="enter_solution" title="Enter Solution" onClick="checkNumMatch();checkMath()">⇨</button> <!--the button size needs to be fixed-->
@@ -65,4 +64,5 @@
             </span>
         </footer>
     </body>
+    <script src="..\game_misc.js"></script>
 </html>

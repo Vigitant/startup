@@ -1,12 +1,12 @@
-/*https://www.zippopotam.us/
+//https://www.zippopotam.us/
 
-async function zipInfo(zipNum) {
+/*async function zipTest(zipNum) {
     const response = await fetch(`https://api.zippopotam.us/us/${zipNum}`);
     const data = await response.json();
     console.log(data.places[0].state);
 
-    const city = data.places[0];
+    const places = data.places[0];
     console.log(places['place name']);
 }
 
-zipInfo(84602);*/
+zipTest(84602);*/
