@@ -133,6 +133,6 @@ async function zipInfo(zipNum) {
   else {
     const cityState = document.getElementById("zipCode");
     removeAllChildNodes(cityState);
-    cityState.innerHTML = "no zip code found";
+    cityState.innerHTML = "No zip code found";
   }
 }
