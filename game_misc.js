@@ -28,21 +28,28 @@ function checkEqualSign() {
   return hasEqual;
 }
 
-function checkNumMatch() {                                                                /*This isn't working. For some reason.*/
-  /*let numPass = 0;
-  let currentNum = document.getElementById("generated-number").toString().charAt(0);
-  for (let i =0; i < document.getElementById("textArea").length; ++i) {
-    if (document.getElementById("textArea").charAt(i) == currentNum) {
-      numPass += 1;
-      currentNum = document.getElementById("generated-number").toString().charAt(numPass);
+function checkNumMatch() {
+  let expression = document.getElementById("textArea").value;
+  let rawNumber = document.getElementById("new_number").innerHTML;    //how to get the number being displayed?
+  console.log(rawNumber);
+  let numIndex = 0;
+  let numCount = 0;
+  
+  for (let i = 0; i < expression.length; ++i) {
+    if(expression.at(i) >= '0' && expression.at(i) <= '9') {
+      numCount++;
+    }
+    if(expression.at(i) == rawNumber.at(numIndex)) {
+      numIndex++;
     }
   }
-  if(numPass != 5) {
-    const output = document.getElementById("entryResponse");
-    removeAllChildNodes(output);
-    messageDisplay.innerHTML = "The numbers in your answer don't match the generated number";
-    output.appendChild(messageDisplay);
-  }*/
+  
+  if (numIndex == 5 && numCount == 5) {
+    console.log("pass");
+  }
+  else {
+    console.log("fail");
+  }
 }
 
 function replaceExpressions(input) {
