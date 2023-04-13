@@ -1,3 +1,5 @@
+console.log("working");
+
 let numDisplay = document.createElement('h2');
 let messageDisplay = document.createElement('div');
 
@@ -9,6 +11,8 @@ async function random_number() {
     output.appendChild(numDisplay);
     await zipInfo(numRand);
 }
+
+random_number();
 
 document.getElementById("new_number").onclick=async()=>{
   await random_number();
