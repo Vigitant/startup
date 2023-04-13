@@ -30,8 +30,7 @@ function checkEqualSign() {
 
 function checkNumMatch() {
   let expression = document.getElementById("textArea").value;
-  let rawNumber = document.getElementById("new_number").innerHTML;    //how to get the number being displayed?
-  console.log(rawNumber);
+  let rawNumber = document.getElementById("generated-number").textContent;
   let numIndex = 0;
   let numCount = 0;
   
@@ -44,11 +43,13 @@ function checkNumMatch() {
     }
   }
   
-  if (numIndex == 5 && numCount == 5) {
-    console.log("pass");
-  }
+  if (numIndex == 5 && numCount == 5) { return true; }
   else {
-    console.log("fail");
+    const output = document.getElementById("entryResponse");
+    removeAllChildNodes(output);
+    messageDisplay.innerHTML = "The numbers in your solution don't match";
+    output.appendChild(messageDisplay);
+    return false;
   }
 }
 
@@ -58,25 +59,27 @@ function replaceExpressions(input) {
   input = input.replace(/x/g, '*');
   input = input.replace(/÷/g, '/');
   input = input.replace(/\^/g, '**');
-  //input = input.replace(/√/g, '');  next on my hit list
   //if(index of ( - 1 == # or ), insert *
   return input;
 }
 
 function checkMath() {
   if (!checkEqualSign()) { return }
+  if (!checkNumMatch()) { return }
   let rawInput = document.getElementById("textArea").value;
   let userInput = replaceExpressions(rawInput);
+  userInput = fixRoots(userInput);
   let mathExpressions = userInput.split("=");
 
   let correctMath = true;
   for (let i = 0; i < mathExpressions.length - 1; ++i) {
+    console.log(mathExpressions[i]);
     if(Function("return " + mathExpressions[i])() != Function("return " + mathExpressions[i+1])()) {
       correctMath = false;
     }
   }
   if (correctMath) {
-    const output = document.getElementById("entryResponse");
+    const output = document.getElementById("entryResponse");    //should get a try again message if = "NaN";
     removeAllChildNodes(output);
     messageDisplay.innerHTML = "Good job!";
     output.appendChild(messageDisplay);
@@ -106,7 +109,7 @@ function removeAllChildNodes(parent) {
   }
 }
 
-const insertCharacter = function (character) {
+const insertCharacter = function(character) {
   let textarea = document.getElementById("textArea");
   let start_position = textarea.selectionStart;
   let end_position = textarea.selectionEnd;
@@ -131,8 +134,6 @@ async function zipInfo(zipNum) {
     const data = await response.json();
     const places = data.places[0];
 
-    console.log(places['place name'] + ', ' + places['state']);
-
     const cityState = document.getElementById("zipCode");
     removeAllChildNodes(cityState);
     cityState.innerHTML = places['place name'] + ', ' + places['state'];
@@ -142,4 +143,53 @@ async function zipInfo(zipNum) {
     removeAllChildNodes(cityState);
     cityState.innerHTML = "No zip code found";
   }
+}
+
+function fixRoots(rawData) {
+  if(rawData.includes("√")) {
+    let rootNum = 1;
+    let baseNum = 1;
+    let rootIndex = rawData.indexOf("√");
+    let opStart = 0;
+    let opEnd = 0;
+    
+    //get the root value
+    if(rawData.at(rootIndex - 1) >= '0' && rawData.at(rootIndex - 1) <= '9') {
+      //check for futher numbers
+      let indexMod = 1;
+      while(rawData.at(rootIndex - indexMod - 1) >= '0' && rawData.at(rootIndex - indexMod - 1) <= '9') {
+        indexMod++;
+      }
+      opStart = rootIndex - indexMod;
+      rootNum = rawData.substring(opStart, rootIndex);
+    }
+    //check for parentheses
+    else if(rawData.at(rootIndex - 1) == ')') {
+      opStart = rawData.substring(0, rootIndex).lastIndexOf('(');
+      let calculation = Function("return " + rawData.substring(opStart, rootIndex));
+      rootNum = calculation();
+      console.log(rootNum);
+    }
+    
+    //get the base value
+    if(rawData.at(rootIndex + 1) >= '0' && rawData.at(rootIndex + 1) <= '9') {
+      //check for futher numbers
+      let indexMod = 2;
+      while(rawData.at(rootIndex + indexMod) >= '0' && rawData.at(rootIndex + indexMod) <= '9') {
+        indexMod++;
+      }
+      opEnd = rootIndex + indexMod;
+      baseNum = rawData.substring(rootIndex + 1, opEnd);
+    }
+    //check for parentheses
+    else if(rawData.at(rootIndex + 1) == '(') {
+      opEnd = rawData.indexOf(')', rootIndex);
+      let calculation = Function("return " + rawData.substring(rootIndex + 1, opEnd + 1));
+      rootNum = calculation();
+      console.log(rootNum);
+    }
+    let finalEval = rawData.replace(rawData.substring(opStart, opEnd + 1), baseNum**(1/rootNum));
+    return finalEval;
+  }
+  else { return rawData; }
 }
