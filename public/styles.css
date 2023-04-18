@@ -51,6 +51,8 @@ input {
 #enter_solution {
   font-size: 2em;
   background-color: #0485d1;
+  width: 45px;
+  height: 55px;
 }
 #input_line {
   margin-top: 125px;
